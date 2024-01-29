@@ -12,11 +12,10 @@ class News extends StatefulWidget {
 }
 
 class _NewsState extends State<News> {
-
   Future<void> onPressed() async {
-      if (!await launchUrl(Uri.parse(widget.article.url))) {
-    throw Exception('Could not launch $widget.article.url');
-  }
+    if (!await launchUrl(Uri.parse(widget.article.url))) {
+      throw Exception('Could not launch $widget.article.url');
+    }
   }
 
   @override
@@ -35,7 +34,8 @@ class _NewsState extends State<News> {
                 widget.article.description,
               ),
               const SizedBox(height: 20),
-              TextButton(onPressed: onPressed, child: const Text("Voir l'articles")),
+              TextButton(
+                  onPressed: onPressed, child: const Text("Voir l'articles")),
             ],
           ),
         ),
